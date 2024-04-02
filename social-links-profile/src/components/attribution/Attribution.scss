@@ -1,0 +1,81 @@
+@import '../../main.scss';
+
+.attribution {
+    position: fixed;
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    border: solid 2px $color-grey;
+    right: 24px;
+    bottom: 24px;
+    box-sizing: content-box;
+    img {
+      width: inherit;
+      height: inherit;
+      box-sizing: border-box;
+      display: block;
+      border-radius: inherit;
+    }
+    &--content {
+      position: absolute;
+      right: 75%;
+      z-index: -1;
+      top: 50%;
+      font-size: 15px;
+      color: $color-white;
+      border-radius: 50px 0 0 50px;
+      background-color: $color-grey;
+      transform: translateY(-50%);
+      width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      transition: width 0.30s ease-in-out;
+      box-sizing: border-box;
+      padding-top: 8px;
+      padding-bottom: 8px;
+      &.active {
+        padding: 8px 24px;
+        width: 460px;
+      }
+  
+      a {
+        color: $color-green;
+        &:hover, &:visited, &:active {
+          color: $color-green;
+        }
+      }
+    }
+  
+    @media #{map-get($media, tablet)} {
+      width: 36px;
+      height: 36px;
+      right: 8px;
+      bottom: 8px;
+      &--content {
+        font-size: 12px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        &.active {
+          padding: 4px 16px;
+          width: 360px;
+        }
+      }
+    }
+  
+    @media #{map-get($media, mobile)} {
+      width: 24px;
+      height: 24px;
+      right: 8px;
+      bottom: 8px;
+      &--content {
+        font-size: 10px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        &.active {
+          padding: 4px 16px;
+          width: 300px;
+        }
+      }
+    }
+  
+  }
